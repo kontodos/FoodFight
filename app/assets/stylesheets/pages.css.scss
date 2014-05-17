@@ -1,0 +1,181 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body
+{
+background-image: url("/images/crossword.png");
+font-family: 'Archivo Narrow', sans-serif; 
+}
+.navbar
+{
+width: auto;
+//background-color: #FFF0D1;
+background-color: white;
+border: 1px solid #FFCC00;
+}
+
+.navbar ul { 
+	margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	} 
+ 
+.navbar ul li {  
+	display: inline; 
+	} 
+ 
+.navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; 
+	color: brown; 
+	//background-color: #FFF0D1; 
+	background-color: white;
+	} 
+	
+.navbar #login
+{
+	float: right;
+}
+
+.navbar ul li a:hover { 
+	color: #FFF0D1; 
+	background-color: #FFCC00; 
+	} 
+	
+.navbar li.active a
+{
+	color: #FFF0D1;
+	background-color: #663300;
+}
+	
+	
+.banner
+{
+margin-top: 10px;
+width: 100%;
+height: auto;
+margin-left: auto;
+margin-right: auto;
+border: 1px solid #FFCC00;
+background-color: #FFF0D1;
+}
+
+.banner img
+{
+width: 100%;
+height: 100%;
+}
+
+.banner2
+{
+margin-top: 10px;
+width: 100%;
+height: auto;
+margin-left: auto;
+margin-right: auto;
+border: 1px solid #FFCC00;
+background-color: #FFF0D1;
+}
+
+.banner2 img
+{
+width: 100%;
+height: 300px;
+}
+
+.content //content in the home
+{
+background-color: white;
+margin-top: 15px;
+width: 1000px;
+margin-left: auto;
+margin-right: auto;
+overflow: hidden;
+border: 1px solid #FFCC00;
+}
+
+.content2 //content for other pages
+{
+background-color: white;
+margin-top: 15px;
+width: 1000px;
+height: 500px;
+margin-left: auto;
+margin-right: auto;
+overflow: hidden;
+border: 1px solid #FFCC00;
+}
+
+.content2 h1, h2
+{
+text-align: center;
+}
+
+.leftpart
+{
+float: left;
+width: 499px;
+height: 500px;
+margin-left: auto;
+margin-right: auto;
+background-color: brown;
+border-right: 2px solid #FFCC00;
+}
+
+.rightpart
+{
+float: left;
+width: 499px;
+height: 500px;
+margin-left: auto;
+margin-right: auto;
+background-color:yellow;
+}
+
+.heading
+{
+width: 1000px;
+height: 50px;
+border-bottom: 2px solid #FFCC00;
+}
+
+.heading h1, h2, h3, h4, h5, h6
+{
+text-align: center;
+color: #663300;
+}
+
+.tile
+{
+border: 1px solid #FFCC00;
+float: left;
+margin-top: 15px;
+width: 300px;
+margin-right: 15px;
+margin-left: 15px;
+height: 400px;
+margin-bottom: 20px;
+box-shadow: 10px 10px 5px #888888;
+}
+
+.tilepic
+{
+background-color: orange;
+width: 280px;
+height: 200px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+}
+
+.tilecontent
+{
+background-color: black;
+width: 280px;
+height: 170px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+margin-bottom: 10px;
+}
