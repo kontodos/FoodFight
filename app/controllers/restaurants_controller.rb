@@ -24,6 +24,7 @@ class RestaurantsController < ApplicationController
 
   def show
 	@restaurant = Restaurant.find(params[:id])
+	Food.new
   end
 
   def edit
@@ -49,17 +50,23 @@ class RestaurantsController < ApplicationController
   
   def createfood
 	@restaurant = Restaurant.find(params[:id])
-	@food = Food.new
+	@food = Food.new( food_params)
 	@food.name = params[:food][:name]
 	@food.price = params[:food][:price]
 	@food.description = params[:food][:description]
-	
+	@food.save!
 	@restaurant.foods << @food
 	@restaurant.save!
 		
 	@restaurants = Restaurant.all
 		
 	redirect_to :restaurants
+  end
+  
+  private
+  
+  def food_params
+	params.require(:food).permit(:avatar)
   end
   
 
