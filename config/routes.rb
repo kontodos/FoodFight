@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  devise_for :users
  resources :restaurants
 	
 	get '/restaurants/:id/addfood' => 'restaurants#addfood'
