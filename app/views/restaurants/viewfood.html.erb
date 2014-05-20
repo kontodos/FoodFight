@@ -1,0 +1,29 @@
+<h1>View Foods of <%= @restaurant.name %></h1>
+
+<table class="table">
+	<thead>
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Price</td>
+			<td>Description</td>
+			<td>Rating</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @restaurant.foods.each do |f| %>
+		<td><%= f.id %></td>
+		<td><%= f.name %></td>
+		<td><%= f.price %></td>
+		<td><%= f.description %></td>
+		<td><%= f.rating %></td>
+
+		
+		<% end %>
+	</tbody>
+	</table>
+	
+	<%= link_to "Back to restaurants", restaurants_path %>

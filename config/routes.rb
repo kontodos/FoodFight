@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
  
-  devise_for :users
  resources :restaurants
-	
+
+ 
 	get '/restaurants/:id/addfood' => 'restaurants#addfood'
 	post 'restaurants/:id/addfood' => 'restaurants#createfood'
+	get 'restaurants/:id/showfood' => 'restaurants#viewfood'
  
   root to: 'pages#home'
 

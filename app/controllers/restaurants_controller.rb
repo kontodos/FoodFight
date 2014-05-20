@@ -28,7 +28,7 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-	@restaurants = Restaurant.find(params[:id])
+	@restaurant = Restaurant.find(params[:id])
   end
   
   def update
@@ -40,6 +40,13 @@ class RestaurantsController < ApplicationController
 	@restaurant.save!
 	@restaurants = Restaurant.all
 	render :index
+  end
+  
+  def destroy
+	@restaurant = Restaurant.find(params[:id])
+	@restaurant.destroy!
+	redirect_to :action => :index
+
   end
 
 
@@ -63,11 +70,22 @@ class RestaurantsController < ApplicationController
 	redirect_to :restaurants
   end
   
+  def viewfood
+	@restaurant = Restaurant.find(params[:id])
+	Food.new
+  end
+  
+  def deletefood
+     @food = Food.find(params[:id])
+	 @food.destroy!
+  end
+  
   private
   
   def food_params
 	params.require(:food).permit(:avatar)
   end
+  
   
 
 end

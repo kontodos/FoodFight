@@ -1,12 +1,33 @@
-<h1>Resto</h1>
-<%= debug @restaurant %>
-<br />
-<br />
-<h1>Available foods</h1>
-<ul>
-<% @restaurant.foods.each do |f| %>
-<li><%= f.name %></li>
-<li><%= image_tag f.avatar.url %></li>
-<% end %>
-</ul>
-<%= link_to 'Show all restaurants', restaurants_path %>
+<body>
+<div class="navbar">
+	<ul>
+		<li><%= link_to "Home", root_path %></li>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Contact", contact_path %></li>
+		<li><%= link_to "Food Fight!", foodfight_path %></li>
+		<li id="login"><%= link_to "Login", login_path %></li>
+	</ul>
+</div>
+
+<div class="content2">
+	<div class="heading">
+		<h1><%= @restaurant.name %></h1>
+	</div>
+	
+	<div class="food">
+	
+	<% @restaurant.foods.each do |f| %>
+		<div class="thumb">
+			<%= image_tag f.avatar.url(:large) %></li>
+		</div>
+		
+		<div class="details">
+			<h3>Name:&nbsp<%= f.name %></h3>
+			<h3>Price:&nbsp<%= f.price %></h3>
+			<h3>Description:&nbsp<%= f.description %></h3>
+		</div>
+		
+		<% end %>
+	</div>
+
+</div>
