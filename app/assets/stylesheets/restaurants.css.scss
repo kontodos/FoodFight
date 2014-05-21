@@ -6,7 +6,8 @@
 {
 width: auto;
 height: 200px;
-
+float: left;
+padding-bottom: 20px;
 }
 
 .thumb
@@ -21,6 +22,11 @@ padding-top: 15px;
 width: auto;
 float: left;
 padding-top: 15px;
+}
+
+.details h3
+{
+color: #1B81CC;
 }
 
 h3

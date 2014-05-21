@@ -1,36 +1,34 @@
 class RestaurantsController < ApplicationController
 
-
-
-  def index
+def index
 	@restaurants = Restaurant.all
-  end
+end
 
-  def new
+def new
 	@restaurant = Restaurant.new
-  end
+end
   
-  def create
-	@restaurant = Restaurant.new
+def create
+	@restaurant = Restaurant.new( restaurant_params )
 	@restaurant.name = params[:restaurant][:name]
 	@restaurant.contact = params[:restaurant][:contact]
 	@restaurant.address = params[:restaurant][:address]
 	@restaurant.description = params[:restaurant][:description]
-	@restaurant.foods = []
+	#@restaurant.foods = []
 	@restaurant.save!
 	
 	redirect_to :restaurants
-  end
+end
 
-  def show
+def show
 	@restaurant = Restaurant.find(params[:id])
-	Food.new
-  end
+	#Food.new
+end
 
-  def edit
+def edit
 	@restaurant = Restaurant.find(params[:id])
-  end
-  
+end
+
   def update
 	@restaurant = Restaurant.find(params[:id])
 	@restaurant.name = params[:restaurant][:name]
@@ -42,50 +40,17 @@ class RestaurantsController < ApplicationController
 	render :index
   end
   
-  def destroy
+    def destroy
 	@restaurant = Restaurant.find(params[:id])
 	@restaurant.destroy!
 	redirect_to :action => :index
 
   end
-
-
-  def addfood
-	@restaurant = Restaurant.find(params[:id])
-	@food = Food.new
-  end
-  
-  def createfood
-	@restaurant = Restaurant.find(params[:id])
-	@food = Food.new( food_params)
-	@food.name = params[:food][:name]
-	@food.price = params[:food][:price]
-	@food.description = params[:food][:description]
-	@food.save!
-	@restaurant.foods << @food
-	@restaurant.save!
-		
-	@restaurants = Restaurant.all
-		
-	redirect_to :restaurants
-  end
-  
-  def viewfood
-	@restaurant = Restaurant.find(params[:id])
-	Food.new
-  end
-  
-  def deletefood
-     @food = Food.find(params[:id])
-	 @food.destroy!
-  end
   
   private
   
-  def food_params
-	params.require(:food).permit(:avatar)
+  def restaurant_params
+	params.require(:restaurant).permit(:avatar)
   end
-  
-  
 
 end

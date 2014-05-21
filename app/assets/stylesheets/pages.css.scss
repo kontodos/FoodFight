@@ -85,7 +85,7 @@ border: 1px solid #FFCC00;
 background-color: white;
 margin-top: 15px;
 width: 1000px;
-height: 500px;
+height: auto;
 margin-left: auto;
 margin-right: auto;
 overflow: hidden;
@@ -177,13 +177,19 @@ height: 200px;
 
 .tilecontent
 {
-background-color: black;
 width: 280px;
 height: 170px;
 margin-left: auto;
 margin-right: auto;
 margin-top: 10px;
 margin-bottom: 10px;
+}
+
+.tilecontent h4
+{
+color: #00AAB2;
+margin-left: 5px;
+
 }
 
 .words

@@ -20,8 +20,7 @@
 			<td><%= resto.address %></td>
 			<td><%= resto.contact %></td>
 			<td><%= link_to "Edit", edit_restaurant_path(resto.id) %></td>
-			<td><%= link_to "Add Food", :controller => :restaurants, :action => :addfood, :id => resto.id %></td>
-			<td><%= link_to "View Foods", :controller => :restaurants, :action => :viewfood, :id => resto.id %></td>
+			<td><%= link_to "Food List", restaurant_foods_path(resto.id) %></td>
 			<td><%= button_to "Delete", resto, :method => :delete %></td>
 			
 		</tr>

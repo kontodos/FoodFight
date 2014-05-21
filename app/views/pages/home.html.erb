@@ -19,40 +19,19 @@
 		<h1>Featuring JSEC!</h1>
 	</div>
 	
-
-	<div class="tile">
-		<div class="tilepic">
-			<img id="tilepic1" src="images/bread and breakfast/bnb.png">
-		</div>
-		<div class="tilecontent">
-		</div>
-	</div>
+	<% @restaurants.each do |r| %>
 	
-	
-	<%= link_to restaurant_path(1) do%>
-	<div class="tile">
-		<div class="tilepic">
-			<img id="tilepic2" src="images/littleItaly/littleitaly.jpg">
+		<%= link_to restaurant_path(r.id) do %>
+		<div class="tile">
+			<div class="tilepic">
+				<%= image_tag r.avatar.url(:medium) %>
+			</div>
+			<div class="tilecontent">
+				<h4><%= r.description %></h4>
+			</div>
 		</div>
-		<div class="tilecontent">
-		</div>
-	</div>
+		<% end %>
 	<% end %>
-	
-	
-	<div class="tile">
-		<div class="tilepic">
-		</div>
-		<div class="tilecontent">
-		</div>
-	</div>
-	
-	<div class="tile">
-		<div class="tilepic">
-		</div>
-		<div class="tilecontent">
-		</div>
-	</div>
 	
 </div>
 

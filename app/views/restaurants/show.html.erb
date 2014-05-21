@@ -14,20 +14,18 @@
 		<h1><%= @restaurant.name %></h1>
 	</div>
 	
-	<div class="food">
-	
 	<% @restaurant.foods.each do |f| %>
+	<div class="food">
 		<div class="thumb">
-			<%= image_tag f.avatar.url(:large) %></li>
+			<%= image_tag f.avatar.url(:medium) %></li>
 		</div>
 		
 		<div class="details">
-			<h3>Name:&nbsp<%= f.name %></h3>
-			<h3>Price:&nbsp<%= f.price %></h3>
-			<h3>Description:&nbsp<%= f.description %></h3>
+			<h3><%= f.name %></h3>
+			<h4>Price:&nbsp<%= f.price %></h4>
+			<h4>Description:&nbsp<%= f.description %></h4>
 		</div>
-		
-		<% end %>
 	</div>
+	<% end %>
 
 </div>

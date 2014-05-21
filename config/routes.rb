@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
- 
- resources :restaurants
-
- 
-	get '/restaurants/:id/addfood' => 'restaurants#addfood'
-	post 'restaurants/:id/addfood' => 'restaurants#createfood'
-	get 'restaurants/:id/showfood' => 'restaurants#viewfood'
- 
-  root to: 'pages#home'
+resources :restaurants do
+	resources :foods
+end
+	root to: 'pages#home'
 
   get '/about' => 'pages#about'
 

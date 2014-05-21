@@ -4,12 +4,12 @@ one:
   name: MyString
   contact: 1
   address: MyString
+  rating: MyString
   description: MyString
-  foods: MyText
 
 two:
   name: MyString
   contact: 1
   address: MyString
+  rating: MyString
   description: MyString
-  foods: MyText
