@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
+  devise_for :users do
+  get '/users/sign_out' => 'devise/session#destroy'
+  end
 resources :restaurants do
 	resources :foods
 end
+
 	root to: 'pages#home'
 
   get '/about' => 'pages#about'
 
   get '/contact' => 'pages#contact'
 
-  get '/foodfight' => 'pages#foodfight'
+  get '/foodfight/' => 'pages#foodfight'
+  
+  post '/findresto' => 'pages#findresto'
+ 
 
   get '/login' => 'pages#login'
 
